@@ -1,11 +1,10 @@
-//your JS code here. If required.
 // script.js
 
 // Function to create a promise that resolves after a random delay between 1 and 3 seconds
 function createPromise(name) {
   const time = (Math.random() * 2 + 1).toFixed(3); // Random time between 1 and 3 seconds
   return new Promise((resolve) => {
-    setTimeout(() => resolve({ name, time }), time * 1000);
+    setTimeout(() => resolve({ name, time: parseFloat(time) }), time * 1000);
   });
 }
 
@@ -19,10 +18,10 @@ function displayResult(results) {
   results.forEach((result, index) => {
     const row = `<tr>
                   <td>Promise ${index + 1}</td>
-                  <td>${result.time}</td>
+                  <td>${result.time.toFixed(3)}</td>
                 </tr>`;
     tbody.innerHTML += row;
-    maxTime = Math.max(maxTime, parseFloat(result.time));
+    maxTime = Math.max(maxTime, result.time);
   });
 
   const totalRow = `<tr>
