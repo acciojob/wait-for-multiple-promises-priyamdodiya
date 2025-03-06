@@ -1,1 +1,17 @@
 /*  your css code here. If applicable */
+ table {
+      width: 50%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      text-align: center;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    td[colspan="2"] {
+      text-align: center;
+    }
