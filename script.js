@@ -20,7 +20,7 @@ function displayResult(results) {
                   <td>Promise ${index + 1}</td>
                   <td>${result.time.toFixed(3)}</td>
                 </tr>`;
-    tbody.innerHTML += row;
+    tbody.insertAdjacentHTML("beforeend", row);
     maxTime = Math.max(maxTime, result.time);
   });
 
@@ -28,7 +28,7 @@ function displayResult(results) {
                       <td>Total</td>
                       <td>${maxTime.toFixed(3)}</td>
                     </tr>`;
-  tbody.innerHTML += totalRow;
+  tbody.insertAdjacentHTML("beforeend", totalRow);
 }
 
 // Initially display loading row
